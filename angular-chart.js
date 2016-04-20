@@ -194,9 +194,11 @@
             // Destroy old chart if it exists to avoid ghost charts issue
             // https://github.com/jtblin/angular-chart.js/issues/187
             destroyChart(chart, scope);
-            chart = new ChartJs.Chart(ctx)[type](data, options);
-            scope.$emit('create', chart);
-
+            $timeout(function(){
+              chart = new ChartJs.Chart(ctx)[type](data, options);
+              scope.$emit('create', chart); 
+            }, 100);
+            
             // Bind events
             cvs.onclick = scope.click ? getEventHandler(scope, chart, 'click', false) : angular.noop;
             cvs.onmousemove = scope.hover ? getEventHandler(scope, chart, 'hover', true) : angular.noop;
