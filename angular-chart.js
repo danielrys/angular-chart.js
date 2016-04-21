@@ -196,14 +196,13 @@
             destroyChart(chart, scope);
             $timeout(function(){
               chart = new ChartJs.Chart(ctx)[type](data, options);
-              scope.$emit('create', chart); 
-            }, 100);
-            
-            // Bind events
-            cvs.onclick = scope.click ? getEventHandler(scope, chart, 'click', false) : angular.noop;
-            cvs.onmousemove = scope.hover ? getEventHandler(scope, chart, 'hover', true) : angular.noop;
+              scope.$emit('create', chart);
+              // Bind events
+              cvs.onclick = scope.click ? getEventHandler(scope, chart, 'click', false) : angular.noop;
+              cvs.onmousemove = scope.hover ? getEventHandler(scope, chart, 'hover', true) : angular.noop;
 
-            if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
+              if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
+            }, 100);
           }
 
           function deprecated (attr) {
