@@ -276,7 +276,7 @@
 
     function getColour (colour) {
       return {
-        fillColor: rgba(colour, 0.2),
+        fillColor: rgba(colour, 0.6),
         strokeColor: rgba(colour, 1),
         pointColor: rgba(colour, 1),
         pointStrokeColor: '#fff',
