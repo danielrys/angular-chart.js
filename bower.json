@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "angular": "1.4.x",
-    "Chart.js": "~1.1.1"
+    "https://github.com/danielrys/Chart.js.git": "~1.1.2"
   },
   "devDependencies": {
     "Chart.StackedBar.js": "~1.0.1",

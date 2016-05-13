@@ -193,8 +193,8 @@
 
             // Destroy old chart if it exists to avoid ghost charts issue
             // https://github.com/jtblin/angular-chart.js/issues/187
-            destroyChart(chart, scope);
             $timeout(function(){
+              destroyChart(chart, scope);
               chart = new ChartJs.Chart(ctx)[type](data, options);
               scope.$emit('create', chart);
               // Bind events
